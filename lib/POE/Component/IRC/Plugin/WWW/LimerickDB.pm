@@ -3,7 +3,7 @@ package POE::Component::IRC::Plugin::WWW::LimerickDB;
 use warnings;
 use strict;
 
-our $VERSION = '0.0101';
+our $VERSION = '0.0102';
 
 use POE;
 use base 'POE::Component::IRC::Plugin::BasePoCoWrap';
@@ -370,39 +370,39 @@ which case, each element of the arrayref will be a separate line of the limerick
 If an error occured, the C<error> key will be present and it will contain the message
 explaning the error.
 
-=head3 C<who>
+=head3 C<_who>
 
-    { 'who' => 'Zoffix!Zoffix@i.love.debian.org', }
+    { '_who' => 'Zoffix!Zoffix@i.love.debian.org', }
 
-The C<who> key will contain the user mask of the user who sent the request.
+The C<_who> key will contain the user mask of the user who sent the request.
 
-=head3 C<what>
+=head3 C<_what>
 
-    { 'what' => '299', }
+    { '_what' => '299', }
 
-The C<what> key will contain user's message after stripping the C<trigger>
+The C<_what> key will contain user's message after stripping the C<trigger>
 (see CONSTRUCTOR).
 
-=head3 C<message>
+=head3 C<_message>
 
-    { 'message' => "LimerickBot, limerick", }
+    { '_message' => "LimerickBot, limerick", }
 
-The C<message> key will contain the actual message which the user sent; that
+The C<_message> key will contain the actual message which the user sent; that
 is before the trigger is stripped.
 
-=head3 C<type>
+=head3 C<_type>
 
-    { 'type' => 'public', }
+    { '_type' => 'public', }
 
-The C<type> key will contain the "type" of the message the user have sent.
+The C<_type> key will contain the "type" of the message the user have sent.
 This will be either C<public>, C<privmsg> or C<notice>.
 
-=head3 C<channel>
+=head3 C<_channel>
 
-    { 'channel' => '#zofbot', }
+    { '_channel' => '#zofbot', }
 
-The C<channel> key will contain the name of the channel where the message
-originated. This will only make sense if C<type> key contains C<public>.
+The C<_channel> key will contain the name of the channel where the message
+originated. This will only make sense if C<_type> key contains C<public>.
 
 =head3 C<method> and C<args>
 
